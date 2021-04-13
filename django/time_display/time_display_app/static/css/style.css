@@ -1,0 +1,24 @@
+#title{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 100px;
+    outline: solid;
+    height: 100px;
+    width: 500px;
+    padding-top: 15px;
+}
+#date_time{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+    outline: solid;
+    height: 200px;
+    width: 700px;
+}
+    #date_time h2{
+        font-size: 60px;
+    }

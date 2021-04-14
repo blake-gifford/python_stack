@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello everyone im blake</h1>
+    <div id="container">
+        <form action="/answer" method="post">
+        <h2>Welcome to The Great Number Game!</h2>
+        <p>I am thinking of a number between 1 and 100.</p>
+        <p>Take a guess on what the number is!</p>
+        <input type="hidden" name="randint">
+        <input type="number" name="number" id="">
+        <button>Submit</button>
+    </form>
+    </div>
 </body>
 </html>

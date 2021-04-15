@@ -7,3 +7,6 @@ urlpatterns = [
     path('', views.index),
     path('create_user', views.create_user)
 ]
+
+
+# test

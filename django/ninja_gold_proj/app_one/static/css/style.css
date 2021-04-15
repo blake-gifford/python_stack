@@ -1,0 +1,34 @@
+#container{
+    padding: 50px;
+}
+#your_gold{
+    display: flex;
+    justify-content: left;
+
+}
+
+#your_gold_box{
+    outline: solid black 2px;
+    height: 15px;
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 5px;
+
+}
+
+#gold_boxes{
+    display: flex;
+    justify-content: space-evenly;
+}
+.gold_box{
+    border: 2px black solid;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    padding: 25px;
+}
+#activities_box{
+    border: 2px black solid;
+    width: 1470px;
+    height: 200px;
+}

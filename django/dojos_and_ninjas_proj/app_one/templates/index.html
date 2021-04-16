@@ -13,11 +13,11 @@
         <div id="add_forms">
             <div id="dojo_form">
                 <h1>Add a Dojo</h1>
-                <form action="/submit" method="post">
+                <form action="/create_dojo" method="post">
                 {% csrf_token %}
                     <p>
                         Name:
-                        <input type="text" name="dojo_name" id="">
+                        <input type="text" name="name" id="">
                     </p>
                     <p>
                         City:
@@ -32,7 +32,7 @@
             </div>
             <div id="ninja_form">
                 <h1>Add a Ninja</h1>
-                <form action="/submit" method="post">
+                <form action="/create_ninja" method="post">
                 {% csrf_token %}
                     <p>
                         First Name:
@@ -45,7 +45,11 @@
                     <p>
                         <!-- todo: make a dropdown menu with all the dojos -->
                         Dojo:
-                        <input type="text" name="dojo" id="dojo">
+                        <select name="dojo">
+                        {% for dojo in dojos %}
+                            <option value="{{ dojo.id }}">{{ dojo.name }}</option>
+                        {% endfor %}
+                        </select>
                     </p>
                     <button>Add</button>
                 </form>
@@ -55,12 +59,12 @@
         <div id="dojo_info">
             <h1>All the Dojos</h1>
             <!-- for loop -->
-            {% for dojo in all_dojos %}
+            {% for dojo in dojos %}
             <h3>{{ dojo.name }}</h3>
             <ul>
                 <!-- for loop -->
-                {% for ninja in all_ninjas %}
-                <li> { <ninja class="dojo name"></ninja> }</li>
+                {% for ninja in dojo.ninjas.all %}
+                <li> {{ ninja.first_name }}</li>
                 {% endfor %}
             </ul>
             {% endfor %}

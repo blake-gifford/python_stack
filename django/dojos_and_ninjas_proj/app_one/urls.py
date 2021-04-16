@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('submit', views.submit)
+    path('create_dojo', views.create_dojo),
+    path('create_ninja', views.create_ninja)
 ]

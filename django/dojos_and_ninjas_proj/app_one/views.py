@@ -4,20 +4,36 @@ from app_one.models import Dojo, Ninja
 
 def index(request):
     context = {
-        "all_dojos" : Dojo.objects.all(),
-        "all_ninjas" : Ninja.objects.all()
+        "dojos": Dojo.objects.all(),
+        "ninjas": Ninja.objects.all()
     }
-    return render(request, "index.html")
+    return render(request, "index.html", context)
 
 
-def submit(request):
+def create_dojo(request):
     print(request.POST)
 
     Dojo.objects.create(
+        name = request.POST['name'],
+        city = request.POST['city'],
+        state = request.POST['state']
+    )
+    # Ninja.objects.create(
+    #     first_name = request.POST['first_name'],
+    #     last_name = request.POST['last_name'],
+    #     dojo = request.POST['dojo']
+    # )
+    return redirect('/')
+
+
+def create_ninja(request):
+    print(request.POST)
+
+    Ninja.objects.create(
         first_name = request.POST['first_name'],
         last_name = request.POST['last_name'],
-        dojo = request.POST['dojo']
+        dojo = Dojo.objects.get(id = request.POST['dojo'])
     )
-    return redirect('/')
+    return redirect("/")
 
 # Create your views here.

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="add_forms">
+            <div id="dojo_form">
+                <h1>Add a Dojo</h1>
+                <form action="" method="post">
+                {% csrf_token %}
+                    <p>
+                        Name:
+                        <input type="text" name="name" id="">
+                    </p>
+                    <p>
+                        City:
+                        <input type="text" name="city" id="">
+                    </p>
+                    <p>
+                        State:
+                        <input type="text" name="state" id="">
+                    </p>
+                    <button>Add</button>
+                </form>
+            </div>
+            <div id="ninja_form">
+                <h1>Add a Ninja</h1>
+                <form action="" method="post">
+                {% csrf_token %}
+                    <p>
+                        First Name:
+                        <input type="text" name="first_name" id="">
+                    </p>
+                    <p>
+                        Last Name:
+                        <input type="text" name="last_name" id="">
+                    </p>
+                    <p>
+                        <!-- todo: make a dropdown menu with all the dojos -->
+                        Dojo:
+                        <input type="text" name="dojo" id="">
+                    </p>
+                    <button>Add</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div id="dojo_info">
+            <h1>All the Dojos</h1>
+            <!-- for loop -->
+            <h3>dojo</h3>
+            <ul>
+                <!-- for loop -->
+                <li>list</li>
+                
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

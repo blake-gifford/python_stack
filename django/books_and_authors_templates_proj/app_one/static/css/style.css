@@ -1,0 +1,13 @@
+#container{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px;
+}
+
+.table{
+    width: 400px;
+}
+.create{
+    width: 400px;
+    text-align: right;
+}

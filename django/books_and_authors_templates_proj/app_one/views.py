@@ -4,7 +4,11 @@ from app_one.models import Author, Book
 
 
 def index(request):
-    return render(request, "index.html")
+    context = [
+        "all_books": Book.object.all(),
+        "all_authors": Author.object.all()
+    ]
+    return render(request, "index.html", context)
 
 
 def add_book(request):

@@ -10,8 +10,9 @@ class Book(models.Model):
 
 class Author(models.Model):
     books = models.ManyToManyField(Book, related_name = "authors")
-    name = models.CharField(max_length = 255)
-    description = models.CharField(max_length = 255)
+    first_name = models.CharField(max_length = 255, default = "name")
+    last_name = models.CharField(max_length = 255, default = "name")
+    notes = models.CharField(max_length = 255)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
 

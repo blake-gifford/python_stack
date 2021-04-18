@@ -24,30 +24,38 @@ def add_book(request):
 
 
 def author(request):
-    print(request.POST)
+    # print(request.POST)
 
     context = {
         "all_books" : Book.objects.all(),
         "all_authors" : Author.objects.all()
     }
-    return(request, "author.html", context) 
+    return render(request, "author.html", context) 
 
 
-def add_author(request):
+# def add_author(request):
     
-    Author.objects.create(
-        name = request.POST['name'],
-        description = request.POST['description'],
-        books = request.POST['books'],
-    )
-    return redirect('/')
+#     Author.objects.create(
+#         name = request.POST['name'],
+#         description = request.POST['description'],
+#         books = request.POST['books'],
+#     )
+#     return redirect('/')
 
 
-def display_book(request):
-    # return render(request, "display_book.html")
-    pass
+# def display_book(request):
+#     # return render(request, "display_book.html")
+#     context = {
+#         "book": Book.objects.get(id = 'book_id'),
+#         "author": Author.objects.all()
+#     }
+#     return render(request, "display_book.html", context)
+# context = {
+#         "jedi": Jedi.objects.get(id = jedi_id),
+#         "force_powers": ForcePower.objects.all()
+#     }
 
 
-def display_author(request):
-    # return render(request, "display_author.html")
-    pass
+# def display_author(request):
+#     # return render(request, "display_author.html")
+#     pass

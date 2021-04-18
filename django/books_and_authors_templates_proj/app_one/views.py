@@ -4,13 +4,19 @@ from app_one.models import Author, Book
 
 
 def index(request):
-    context = [
-        "all_books": Book.object.all(),
-        "all_authors": Author.object.all()
-    ]
+    print(request.POST)
+
+    context = {
+        "all_books" : Book.objects.all(),
+        "all_authors" : Author.objects.all()
+    }
     return render(request, "index.html", context)
 
 
-def add_book(request):
-    return redirect
+# def authors(request):
+#     return render(request, "author.html")
+
+
+# def add_author(request):
+#     pass
 # Create your views here.

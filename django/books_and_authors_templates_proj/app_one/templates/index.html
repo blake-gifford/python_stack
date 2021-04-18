@@ -10,10 +10,10 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="container">
+    <div class="container">
         <div class="create">
             <h1>Add a Book</h1>
-            <form action="/create_dojo" method="post">
+            <form action="/" method="post">
             {% csrf_token %}
             <p>
                 Title:
@@ -36,9 +36,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for book in all_books %}
                     <tr>
-                        <td></td>
+                        <td> {{ book.id }} </td>
+                        <td> {{ book.title }} </td>
+                        <td><a href="/books/{{ book.id }}">View</a></td>
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

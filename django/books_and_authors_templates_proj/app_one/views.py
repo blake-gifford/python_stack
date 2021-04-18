@@ -24,7 +24,7 @@ def add_book(request):
 
 
 def author(request):
-    # print(request.POST)
+    print(request.POST)
 
     context = {
         "all_books" : Book.objects.all(),
@@ -33,14 +33,16 @@ def author(request):
     return render(request, "author.html", context) 
 
 
-# def add_author(request):
+def add_author(request):
+    print(request.POST)
     
-#     Author.objects.create(
-#         name = request.POST['name'],
-#         description = request.POST['description'],
-#         books = request.POST['books'],
-#     )
-#     return redirect('/')
+    Author.objects.create(
+        first_name = request.POST['first_name'],
+        last_name = request.POST['last_name'],
+        notes = request.POST['notes'],
+        books = request.POST['books'],
+    )
+    return redirect('/author')
 
 
 # def display_book(request):

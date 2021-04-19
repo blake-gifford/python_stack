@@ -11,10 +11,12 @@
 </head>
 <body>
     <div id="container">
-        <h1>More Info about The {{all_books.title}} Book!</h1>
-        <p>{{ all_books.id }}</p>
-        <p>{{ all_books.description }}</p>
-        <a href="/">Go Back</a>
+        <h1>Author Info</h1>
+        <h1>{{ all_authors.first_name }}</h1>
+        <p>{{ all_authors.id }}</p>
+        <p>{{ all_authors.notes }}</p>
+        <a href="/author">Go Back</a>
+        {%  %}
     </div>
 </body>
 </html>

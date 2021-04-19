@@ -15,6 +15,22 @@
         <p>{{ all_books.id }}</p>
         <p>{{ all_books.description }}</p>
         <a href="/">Go Back</a>
+
+        <h2>Authors:</h2>
+        <ul>
+            {% for author in all_authors.all %}
+                <li>{{ author.first_name }}</li>
+            {% endfor %}
+        </ul>
+        <form action="/display_book" method="post">
+        {% csrf_token %}
+        <select name="author" id="">
+            {% for author in all_authors %}
+            <option value="{{ author.id }}">{{ author.first_name }}</option>
+            {% endfor %}
+        </select>
+        <button>Add</button>
+        </form>
     </div>
 </body>
 </html>

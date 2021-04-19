@@ -53,6 +53,7 @@ def add_author(request):
 def display_book(request, id):
     context = {
         'all_books': Book.objects.get(id = id),
+        'all_authors': Author.objects.all()
     }
     return render(request, "display_book.html", context)
 

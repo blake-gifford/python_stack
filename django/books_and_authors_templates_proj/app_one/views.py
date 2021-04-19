@@ -30,32 +30,31 @@ def author(request):
     return render(request, "author.html", context) 
 
 
-def add_author(request):
-
-    Author.objects.create(
-        first_name = request.POST['first_name'],
-        last_name = request.POST['last_name'],
-        notes = request.POST['notes'],
-#         # books = Book.objects.get(id = request.POST['books'])
-#         books = request.POST['books']
-    )
-    return redirect('/author')
-
-
-def display_book(request, id):
-    # return render(request, "display_book.html")
-    context = {
-        # "book": Book.objects.all(),
-        # "author": Author.objects.all()
-        'all_books': Book.objects.get(id = id),
-    }
-    return render(request, "display_book.html", context)
-
-
 def display_author(request, id):
     # return render(request, "display_author.html")
     context = {
     'all_authors': Author.objects.get(id = id),
     }
     return render(request, "display_author.html", context)
+
+
+def add_author(request):
+
+    Author.objects.create(
+        first_name = request.POST['first_name'],
+        last_name = request.POST['last_name'],
+        notes = request.POST['notes'],
+        books = Book.objects.get(id = request.POST['books'])
+        # books = request.POST['books']
+    )
+    return redirect('/author')
+
+
+def display_book(request, id):
+    context = {
+        'all_books': Book.objects.get(id = id),
+    }
+    return render(request, "display_book.html", context)
+
+
 

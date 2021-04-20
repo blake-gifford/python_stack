@@ -10,6 +10,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello everyone welcome to my website</h1>
+    <div class="container">
+        <h1>Here is the show you selected</h1>
+        <p>Title: {{ show.title }}</p>
+        <p>Network: {{ show.network }}</p>
+        <p>Release Date: {{ show.release_date }}</p>
+        <p>Show Description: {{ show.description }}</p>
+        <a href="/shows">Go Back</a>
+    </div>
 </body>
 </html>

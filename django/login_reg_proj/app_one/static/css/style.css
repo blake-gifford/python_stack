@@ -1,0 +1,15 @@
+#container{
+    padding: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#register{
+    text-align: end;
+    padding: 10px;
+}
+
+#login{
+    text-align: end;
+    padding: 10px;
+}

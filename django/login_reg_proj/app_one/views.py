@@ -4,22 +4,23 @@ from django.shortcuts import render, redirect
 
 
 def index(request):
-    return redirect('/dashboard')
-
-
-def register(request):
+    # return redirect('/dashboard')
     return render(request, 'index.html')
 
 
+def register(request):
+    return redirect('/dashboard')
+
+
 def login(request):
-    pass
+    return redirect('/dashboard')
 
 
 def logout(request):
-    pass
+    return redirect('/')
 
 
 def dashboard(request):
-    pass
+    return render(request, 'dashboard.html')
 
 # Create your views here.

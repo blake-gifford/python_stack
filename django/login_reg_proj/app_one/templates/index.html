@@ -12,38 +12,46 @@
 <body>
     <div id="container">
         <div id="register">
-            <p>
-                First Name:
-                <input type="text" name="first_name" id="">
-            </p>
-            <p>
-                Last Name:
-                <input type="text" name="last_name" id="">
-            </p>
-            <p>
-                Email:
-                <input type="text" name="email" id="">
-            </p>
-            <p>
-                Password:
-                <input type="text" name="password" id="">
-            </p>
-            <p>
-                Confirm Password:
-                <input type="text" name="confirm_password" id="">
-            </p>
-            <button>Register</button>
+            <form action="/dashboard" method="post">
+                {% csrf_token %}
+                <h1>Register</h1>
+                <p>
+                    First Name:
+                    <input type="text" name="first_name" id="">
+                </p>
+                <p>
+                    Last Name:
+                    <input type="text" name="last_name" id="">
+                </p>
+                <p>
+                    Email:
+                    <input type="text" name="email" id="">
+                </p>
+                <p>
+                    Password:
+                    <input type="text" name="password" id="">
+                </p>
+                <p>
+                    Confirm Password:
+                    <input type="text" name="confirm_password" id="">
+                </p>
+                <button>Register</button>
+            </form>
         </div>
         <div id="login">
-            <p>
-                Email:
-                <input type="text" name="email" id="">
-            </p>
-            <p>
-                Password:
-                <input type="text" name="password" id="">
-            </p>
-            <button>Login</button>
+            <form action="/dashboard" method="post">
+                {% csrf_token %}
+                <h1>Login</h1>
+                <p>
+                    Email:
+                    <input type="text" name="email" id="">
+                </p>
+                <p>
+                    Password:
+                    <input type="text" name="password" id="">
+                </p>
+                <button>Login</button>
+            </form>
         </div>
     </div>
 </body>

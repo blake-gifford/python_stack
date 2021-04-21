@@ -12,7 +12,7 @@
 <body>
     <div id="container">
         <div id="register">
-            <form action="/dashboard" method="post">
+            <form action="/register" method="post">
                 {% csrf_token %}
                 <h1>Register</h1>
                 <p>
@@ -29,17 +29,17 @@
                 </p>
                 <p>
                     Password:
-                    <input type="text" name="password" id="">
+                    <input type="password" name="password" id="">
                 </p>
                 <p>
                     Confirm Password:
-                    <input type="text" name="confirm_password" id="">
+                    <input type="password" name="confirm_password" id="">
                 </p>
                 <button>Register</button>
             </form>
         </div>
         <div id="login">
-            <form action="/dashboard" method="post">
+            <form action="/login" method="post">
                 {% csrf_token %}
                 <h1>Login</h1>
                 <p>
@@ -48,11 +48,20 @@
                 </p>
                 <p>
                     Password:
-                    <input type="text" name="password" id="">
+                    <input type="password" name="password" id="">
                 </p>
                 <button>Login</button>
             </form>
         </div>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}         
+            {{ message }}
+        <li>
+            {% endfor %}
+        </li>
+        </ul>
+        {% endif %}
     </div>
 </body>
 </html>

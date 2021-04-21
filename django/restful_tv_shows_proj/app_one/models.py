@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class ShowManager(models.Model):
+class ShowManager(models.Manager):
     def validator(self, post_data):
         errors = {}
 
@@ -23,5 +23,6 @@ class Show(models.Model):
     release_date = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
+    objects = ShowManager()
 
 # Create your models here.

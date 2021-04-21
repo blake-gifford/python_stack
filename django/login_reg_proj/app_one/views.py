@@ -15,7 +15,6 @@ def index(request):
 def register(request):
     print(request.POST['first_name'])
     errors = User.objects.registration_validator(request.POST)
-    print("************", errors)
     if len(errors) > 0:
         for key, value in errors.items():
             messages.error(request, value)
@@ -29,9 +28,9 @@ def register(request):
             email = request.POST['email'],
             password = account
         )
-
         request.session['uuid'] = new_user.id
-    return redirect('/dashboard')
+
+        return redirect('/dashboard')
 
 
 def login(request):
@@ -52,6 +51,7 @@ def login(request):
 
 def logout(request):
     del request.session['uuid']
+    
     return redirect('/')
 
 

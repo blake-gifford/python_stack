@@ -10,6 +10,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="wrapper">
+        <div class="header">
+            <h1>CodingDojo Wall</h1>
+            <p>Welcome {{logged_in_user.first_name}}! || <a class="btn btn-primary" href="/logout" role="button">Logout</a></p>
+        </div>
+        <div id="body">
+            <p>
+                Post a message!
+                <form action="/" method="post">
+                <textarea name="post" id="" cols="110" rows="5"></textarea>
+                <button class="btn btn-primary">Post!</button>
+                </form>
+            </p>
+        </div>
+    </div>
 </body>
 </html>

@@ -60,5 +60,5 @@ def homepage(request):
         "all_users": User.objects.all()
     }
 
-    return render(request, 'homepage.html')
+    return render(request, 'homepage.html', context)
 # Create your views here.

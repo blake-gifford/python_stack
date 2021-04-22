@@ -9,7 +9,7 @@ urlpatterns = [
     path('logout', views.logout),
     path('homepage', views.homepage),
     # display paths
-
-    # action paths
     
+    # action paths
+
 ]

@@ -1,0 +1,17 @@
+#container{
+    padding: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.card{
+    width: 350px;
+    text-align: center;
+}
+#login {
+    height: 300px;
+}
+.errors{
+    color: red;
+    text-align: center;
+    list-style-position: inside;
+}

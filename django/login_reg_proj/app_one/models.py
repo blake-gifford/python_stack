@@ -29,12 +29,12 @@ class UserManager(models.Manager):
     def login_validator(self, post_data):
         errors = {}
         user_list = User.objects.filter(email = post_data['email'])
-        if len(user_list) > 1:
+        if len(user_list) > 0:
             user = user_list[0]
             if not bcrypt.checkpw(post_data['password'].encode(), user.password.encode()):
                 errors['password'] = "Invalid Login"
         else:
-            errors['email'] = "Invalid Login"
+            errors['email'] = "Invalid email"
         return errors
 
 

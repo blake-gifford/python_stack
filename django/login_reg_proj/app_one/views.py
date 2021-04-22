@@ -50,7 +50,7 @@ def login(request):
 
 
 def logout(request):
-    del request.session['uuid']
+    request.session.clear()
     
     return redirect('/')
 

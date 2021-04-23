@@ -22,6 +22,9 @@
     width: 100%;
     height: 90px;
 }
-#body{
+#post_message{
     margin: 30px;
+}
+#body{
+    padding: 30px;
 }

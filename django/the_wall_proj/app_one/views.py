@@ -2,7 +2,7 @@ import bcrypt
 from django.contrib import messages
 from django.shortcuts import render, redirect
 
-from .models import User
+from .models import User, Message, Comment
 
 def index(request):
     if "uuid" in request.session:
@@ -53,12 +53,48 @@ def logout(request):
 
 
 def homepage(request):
+
     if "uuid" not in request.session:
         return redirect("/")
+
     context = {
         "logged_in_user": User.objects.get(id = request.session['uuid']),
-        "all_users": User.objects.all()
+        "all_messages": Message.objects.all()
     }
-
     return render(request, 'homepage.html', context)
+
+
+def add_message(request):
+
+    errors = Message.objects.validator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+            
+            return redirect('/homepage')
+
+    Message.objects.create(
+        message = request.POST['message'],
+        user= User.objects.get(id = request.session['uuid'])
+    )
+    return redirect('/homepage')
+
+
+def add_comment(request):
+
+    errors = Comment.objects.comment_validator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+            
+            return redirect('/homepage')
+
+    Comment.objects.create(
+        comment = request.POST['comment'],
+        message = request.POST['message'],
+        user = User.objects.get(id = request.session['uuid'])
+    )
+    return redirect('/homepage')
 # Create your views here.
+
+

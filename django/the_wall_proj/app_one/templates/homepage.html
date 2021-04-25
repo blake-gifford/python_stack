@@ -40,13 +40,13 @@
                     <p>{{ message.message }}</p>
                     <hr>
                     <p>{{ message.user.first_name }}</p>
-                    <p>{{ message.comment }}</p>
+                    <p>{{ message.user.comment }}</p>
                     <hr>
                     <p>Post a Comment</p>
-                    <form action="/comment/new" method="post">
-                        {% csrf_token %}
-                    <textarea name="comment" id="" cols="110" rows="4"></textarea>
-                    <button class="btn btn-primary">Comment!</button>
+                        <form action="/comment/new" method="post">
+                            {% csrf_token %}
+                        <textarea name="comment" id="" cols="110" rows="4"></textarea>
+                        <button class="btn btn-primary">Comment!</button>
                     </form>
                     <hr>
                     <hr>
@@ -63,7 +63,3 @@
 
 
 
-<!-- to get logged in user messages -->
-<!-- {% for message in logged_in_user.messages.all %}
-    <p>{{ message.message }}</p>
-{% endfor %} -->

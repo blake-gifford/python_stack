@@ -72,6 +72,7 @@ class CommentManager(models.Manager):
     def comment_validator(self, post_data):
         errors = {}
 
+        form_comment
         if len(post_data['comment']) < 1:
             errors['comment'] = "Your comment must be at least 1 charector long."
         return errors

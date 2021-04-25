@@ -95,6 +95,10 @@ def add_comment(request):
         user = User.objects.get(id = request.session['uuid'])
     )
     return redirect('/homepage')
-# Create your views here.
 
 
+
+# to get logged in user messages
+# {% for message in logged_in_user.messages.all %}
+#     <p>{{ message.message }}</p>
+# {% endfor %} 

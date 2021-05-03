@@ -66,5 +66,19 @@ function bubbleSort(nums){
         sorted items.
 */
 function selectionSort(nums){
-    
+    for (var i = 0; i < nums.length; i++){
+        var min = nums[i];
+        var minIdx - i;
+        for(var j - i; j < nums.length; j+-1){
+            if(nums[j] < min){
+                min = nums[j];
+                minIdx = j;
+            }
+        }
+    }
+    return nums;
 }
+
+var newArr = [1,3,6,4,6,8]
+
+console.log(selectionSort(newArr))
